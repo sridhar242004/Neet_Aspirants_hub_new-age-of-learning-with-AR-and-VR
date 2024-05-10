@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEET Aspirants Hub - Chemistry</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f8f8;
+        }
+        
+        header {
+            background-color: #66BB6A; /* Green */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: #4CAF50; /* Light green */
+        }
+        
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        section {
+            margin-bottom: 40px;
+        }
+        
+        h2 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        p {
+            font-size: 18px;
+            color: #666;
+            margin: 0;
+        }
+        
+        .topic-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .topic-card {
+            background-color: #FFD54F; /* Amber */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .topic-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .mcq-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .mcq-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: left;
+        }
+        
+        .mcq-card:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+        }
+        
+        .mcq-question {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .mcq-options {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+        
+        .mcq-option {
+            font-size: 16px;
+            margin-bottom: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .mcq-option:hover {
+            background-color: #f0f0f0;
+        }
+</style>
+
+</head>
+<body>
+    <header>
+        <h1>Welcome to NEET Aspirants Hub</h1>
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/Physics/physics.html">Physics</a></li>
+                <li><a href="/Biology/biology.html">Biology</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Chemistry Topics for NEET</h2>
+            <div class="topic-container">
+                <div class="topic-card">Some Basic Concepts of Chemistry</div>
+                <div class="topic-card">Structure of Atom</div>
+                <div class="topic-card">Classification of Elements and Periodicity in Properties</div>
+                <div class="topic-card">Chemical Bonding and Molecular Structure</div>
+                <div class="topic-card">States of Matter: Gases and Liquids</div>
+                <div class="topic-card">Thermodynamics</div>
+                <div class="topic-card">Equilibrium</div>
+                <div class="topic-card">Redox Reactions</div>
+                <div class="topic-card">Hydrogen</div>
+                <div class="topic-card">s-Block Elements (Alkali and Alkaline Earth Metals)</div>
+                <div class="topic-card">Some p-Block Elements</div>
+                <div class="topic-card">Organic Chemistry: Some Basic Principles and Techniques</div>
+                <div class="topic-card">Hydrocarbons</div>
+                <div class="topic-card">Environmental Chemistry</div>
+                <div class="topic-card">Solid State</div>
+                <div class="topic-card">Solutions</div>
+                <div class="topic-card">Electrochemistry</div>
+                <div class="topic-card">Chemical Kinetics</div>
+                <div class="topic-card">Surface Chemistry</div>
+                <div class="topic-card">General Principles and Processes of Isolation of Elements</div>
+                <div class="topic-card">p-Block Elements</div>
+                <div class="topic-card">d- and f-Block Elements</div>
+                <div class="topic-card">Coordination Compounds</div>
+                <div class="topic-card">Haloalkanes and Haloarenes</div>
+                <div class="topic-card">Alcohols, Phenols, and Ethers</div>
+                <div class="topic-card">Aldehydes, Ketones, and Carboxylic Acids</div>
+                <div class="topic-card">Organic Compounds Containing Nitrogen</div>
+                <div class="topic-card">Biomolecules</div>
+                <div class="topic-card">Polymers</div>
+                <div class="topic-card">Chemistry in Everyday Life</div>
+            </div>
+        </section>
+        <section>
+            <h2>Chemistry Quizzes</h2>
+            <div class="mcq-container">
+                <div class="mcq-card" id="mcq1">
+                    <h3 class="mcq-question">Some Basic Concepts of Chemistry</h3>
+                    <ul class="mcq-options">
+                        <li class="mcq-option" onclick="checkAnswer('mcq1', 'D')">A. Matter and its properties</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq1', 'D')">B. Atoms and molecules</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq1', 'D')">C. Laws of chemical combination</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq1', 'D')">D. All of the above</li>
+                    </ul>
+                </div>
+                <div class="mcq-card" id="mcq2">
+                    <h3 class="mcq-question">Structure of Atom</h3>
+                    <ul class="mcq-options">
+                        <li class="mcq-option" onclick="checkAnswer('mcq2', 'D')">A. Atomic models</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq2', 'D')">B. Atomic structure</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq2', 'D')">C. Quantum numbers</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq2', 'D')">D. All of the above</li>
+                    </ul>
+                </div>
+                <div class="mcq-card" id="mcq3">
+                    <h3 class="mcq-question">Classification of Elements and Periodicity in Properties</h3>
+                    <ul class="mcq-options">
+                        <li class="mcq-option" onclick="checkAnswer('mcq3', 'D')">A. Classification of elements</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq3', 'D')">B. Periodic properties</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq3', 'D')">C. Periodic trends</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq3', 'D')">D. All of the above</li>
+                    </ul>
+                </div>
+                <div class="mcq-card" id="mcq4">
+                    <h3 class="mcq-question">Chemical Bonding and Molecular Structure</h3>
+                    <ul class="mcq-options">
+                        <li class="mcq-option" onclick="checkAnswer('mcq4', 'D')">A. Covalent bonding</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq4', 'D')">B. Ionic bonding</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq4', 'D')">C. Hybridization</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq4', 'D')">D. All of the above</li>
+                    </ul>
+                </div>
+                <div class="mcq-card" id="mcq5">
+                    <h3 class="mcq-question">States of Matter: Gases and Liquids</h3>
+                    <ul class="mcq-options">
+                        <li class="mcq-option" onclick="checkAnswer('mcq5', 'D')">A. Kinetic theory of gases</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq5', 'D')">B. Real gases</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq5', 'D')">C. Liquid state</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq5', 'D')">D. All of the above</li>
+                    </ul>
+                </div>
+                <div class="mcq-card" id="mcq6">
+                    <h3 class="mcq-question">Thermodynamics</h3>
+                    <ul class="mcq-options">
+                        <li class="mcq-option" onclick="checkAnswer('mcq6', 'D')">A. Laws of thermodynamics</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq6', 'D')">B. Heat capacity</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq6', 'D')">C. Entropy</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq6', 'D')">D. All of the above</li>
+                    </ul>
+                </div>
+                <div class="mcq-card" id="mcq7">
+                    <h3 class="mcq-question">Equilibrium</h3>
+                    <ul class="mcq-options">
+                        <li class="mcq-option" onclick="checkAnswer('mcq7', 'D')">A. Types of equilibrium</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq7', 'D')">B. Le Chatelier's principle</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq7', 'D')">C. Ionic equilibrium</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq7', 'D')">D. All of the above</li>
+                    </ul>
+                </div>
+                <div class="mcq-card" id="mcq8">
+                    <h3 class="mcq-question">Redox Reactions</h3>
+                    <ul class="mcq-options">
+                        <li class="mcq-option" onclick="checkAnswer('mcq8', 'D')">A. Oxidation and reduction</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq8', 'D')">B. Balancing redox reactions</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq8', 'D')">C. Electrochemical cells</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq8', 'D')">D. All of the above</li>
+                    </ul>
+                </div>
+                <div class="mcq-card" id="mcq9">
+                    <h3 class="mcq-question">Hydrogen</h3>
+                    <ul class="mcq-options">
+                        <li class="mcq-option" onclick="checkAnswer('mcq9', 'D')">A. Preparation of hydrogen</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq9', 'D')">B. Isotopes of hydrogen</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq9', 'D')">C. Properties of hydrogen</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq9', 'D')">D. All of the above</li>
+                    </ul>
+                </div>
+                <div class="mcq-card" id="mcq10">
+                    <h3 class="mcq-question">s-Block Elements (Alkali and Alkaline Earth Metals)</h3>
+                    <ul class="mcq-options">
+                        <li class="mcq-option" onclick="checkAnswer('mcq10', 'D')">A. Group 1 elements</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq10', 'D')">B. Group 2 elements</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq10', 'D')">C. Properties of alkali metals</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq10', 'D')">D. All of the above</li>
+                    </ul>
+                </div>
+            </div>
+              
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 NEET Aspirants Hub</p>
+    </footer>
+    <script>
+        function checkAnswer(mcqId, correctAnswer) {
+            // Get the MCQ options list
+            var options = document.getElementById(mcqId).getElementsByClassName('mcq-option');
+            
+            // Loop through options to check for correct answer and apply styles
+            for (var i = 0; i < options.length; i++) {
+                if (options[i].innerText.includes(correctAnswer)) {
+                    options[i].style.backgroundColor = '#7FFF7F'; // Correct answer
+                } else {
+                    options[i].style.backgroundColor = '#FF7F7F'; // Incorrect answer
+                }
+                options[i].style.pointerEvents = 'none'; // Disable further clicks
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEET Aspirants Hub - Gravitation</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/2.1.2/aframe/build/aframe-ar.js"></script>
+    <style>
+        /* Reset default styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Body styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header styles */
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        /* Navigation styles */
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #2E8B57; /* Sea Green */
+        }
+
+        /* Main content styles */
+        main {
+            padding: 20px;
+        }
+
+        /* Section styles */
+        section {
+            margin-bottom: 40px;
+        }
+
+        /* Heading styles */
+        h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        /* Paragraph styles */
+        p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        /* Video container styles */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            margin-bottom: 20px;
+        }
+
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* AR video container styles */
+        .ar-video-container {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%;
+            margin-bottom: 20px;
+        }
+
+        .ar-video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* AR controls styles */
+        .ar-controls {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        .ar-controls button {
+            margin: 5px;
+            padding: 8px 16px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .ar-controls button:hover {
+            background-color: #45a049;
+        }
+
+        /* AR minimize button styles */
+        .ar-minimize {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        .ar-minimize button {
+            padding: 8px 16px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .ar-minimize button:hover {
+            background-color: #45a049;
+        }
+
+        /* Quiz container styles */
+        .quiz-container {
+            text-align: center;
+        }
+
+        /* MCQ card styles */
+        .mcq-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* MCQ question styles */
+        .mcq-question {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        /* MCQ options styles */
+        .mcq-option {
+            font-size: 16px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            padding: 10px 20px;
+            display: block;
+            width: 100%;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+
+        .mcq-option:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Refresh button styles */
+        #refresh-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #refresh-btn:hover {
+            background-color: #45a049;
+        }
+
+        /* Score card styles */
+        #score-card {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        #score-card span {
+            font-weight: bold;
+        }
+
+        /* Hidden class */
+        .hidden {
+            display: none;
+        }
+
+        /* Fade in animation */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Experience in AR button styles */
+        .vr-button {
+            display: block;
+            margin: 0 auto;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .vr-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to NEET Aspirants Hub</h1>
+        <nav>
+            <ul>
+                <li><a href="/Physics/physics.html">Physics</a></li>
+                <li><a href="/chemistry/chemistry.html">Chemistry</a></li>
+                <li><a href="/Biology/biology.html">Biology</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Gravitation</h2>
+            <div class="video-container">
+                <video controls>
+                    <source src="" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <p>
+                Gravitation is the fundamental force of attraction between objects with mass, governed by Newton's law of universal gravitation, which states that every particle attracts every other particle with a force proportional to the product of their masses and inversely proportional to the square of the distance between their centers</p>
+            <button class="vr-button" onclick="convertToAR()">Experience in AR</button>
+        </section>
+        <section class="quiz-container">
+            <h2>Quiz</h2>
+            <div id="quiz">
+                <!-- Quiz questions will be generated dynamically here -->
+            </div>
+            <button id="refresh-btn">Refresh Quiz</button>
+            <div id="score-card"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 NEET Aspirants Hub</p>
+    </footer>
+    <script>
+        var totalQuestions = 0;
+        var correctAnswers = 0;
+        var incorrectAnswers = 0;
+    
+        
+        var quizPool = [
+            {
+                question: "Who formulated the law of universal gravitation?",
+                options: ["Isaac Newton", "Albert Einstein", "Galileo Galilei", "Johannes Kepler"],
+                correctAnswer: "Isaac Newton"
+            },
+            {
+                question: "What is the gravitational force between two objects proportional to?",
+                options: ["Product of their masses and inversely proportional to the square of the distance between their centers", "Product of their masses and directly proportional to the distance between their centers", "Sum of their masses and inversely proportional to the distance between their centers", "Sum of their masses and directly proportional to the square of the distance between their centers"],
+                correctAnswer: "Product of their masses and inversely proportional to the square of the distance between their centers"
+            },
+            {
+                question: "What is the value of acceleration due to gravity on the surface of the Earth?",
+                options: ["9.8 m/s²", "6.67 x 10^-11 Nm²/kg²", "3 x 10^8 m/s", "6.3 x 10^6 m"],
+                correctAnswer: "9.8 m/s²"
+            },
+            {
+                question: "What happens to the gravitational force between two objects when the distance between them is doubled?",
+                options: ["It becomes one-fourth", "It becomes half", "It becomes double", "It remains the same"],
+                correctAnswer: "It becomes one-fourth"
+            },
+            {
+                question: "What is the gravitational force between two masses if the distance between them is tripled?",
+                options: ["1/9 times the original force", "1/3 times the original force", "1/6 times the original force", "1/12 times the original force"],
+                correctAnswer: "1/9 times the original force"
+            },
+            {
+                question: "What is the value of gravitational constant (G) in the equation F = (G * m1 * m2) / r²?",
+                options: ["6.67 x 10^-11 Nm²/kg²", "9.8 m/s²", "3 x 10^8 m/s", "6.3 x 10^6 m"],
+                correctAnswer: "6.67 x 10^-11 Nm²/kg²"
+            },
+            {
+                question: "What does the gravitational force between two objects depend on?",
+                options: ["Mass of the objects and the distance between them", "Mass of the objects only", "Distance between the objects only", "Shape of the objects"],
+                correctAnswer: "Mass of the objects and the distance between them"
+            },
+            {
+                question: "At what point does the gravitational force become zero?",
+                options: ["At infinity", "At the center of the Earth", "At the surface of the Earth", "At the poles"],
+                correctAnswer: "At infinity"
+            },
+            {
+                question: "What is the weight of an object?",
+                options: ["The gravitational force acting on the object", "The mass of the object", "The volume of the object", "The density of the object"],
+                correctAnswer: "The gravitational force acting on the object"
+            },
+            {
+                question: "What is the value of acceleration due to gravity at a height equal to the radius of the Earth from its surface?",
+                options: ["4.9 m/s²", "9.8 m/s²", "0 m/s²", "19.6 m/s²"],
+                correctAnswer: "4.9 m/s²"
+            },
+            {
+                question: "What is the gravitational force between two objects if their masses are doubled and the distance between them is halved?",
+                options: ["Four times the original force", "Twice the original force", "Half the original force", "One-fourth the original force"],
+                correctAnswer: "Four times the original force"
+            },
+            {
+                question: "What is the effect of increasing the mass of one object on the gravitational force between two objects?",
+                options: ["Increases the force", "Decreases the force", "No effect on the force", "Changes the direction of the force"],
+                correctAnswer: "Increases the force"
+            },
+            {
+                question: "What is the gravitational force experienced by an object in free fall?",
+                options: ["Weight", "Mass", "Acceleration", "Friction"],
+                correctAnswer: "Weight"
+            },
+            {
+                question: "What happens to the weight of an object when it is taken to the Moon?",
+                options: ["It decreases", "It increases", "It remains the same", "It becomes zero"],
+                correctAnswer: "It decreases"
+            },
+            {
+                question: "What is the gravitational force between two objects if one of the objects is twice as massive as the other?",
+                options: ["Twice the original force", "Half the original force", "Four times the original force", "One-fourth the original force"],
+                correctAnswer: "Twice the original force"
+            },
+            {
+                question: "What is the gravitational force experienced by an object placed at the center of the Earth?",
+                options: ["Zero", "Infinity", "Half its weight", "Equal to its weight"],
+                correctAnswer: "Zero"
+            },
+            {
+                question: "What is the value of gravitational force between two objects if their masses are halved and the distance between them is doubled?",
+                options: ["One-fourth the original force", "One-half the original force", "Four times the original force", "Twice the original force"],
+                correctAnswer: "One-fourth the original force"
+            },
+            {
+                question: "What happens to the gravitational force between two objects when the distance between them is tripled?",
+                options: ["It becomes one-ninth", "It becomes one-third", "It becomes one-sixth", "It remains the same"],
+                correctAnswer: "It becomes one-ninth"
+            },
+            {
+                question: "What is the value of gravitational force between two objects if their masses are tripled and the distance between them is halved?",
+                options: ["Nine times the original force", "Three times the original force", "One-third the original force", "One-ninth the original force"],
+                correctAnswer: "Nine times the original force"
+            },
+            {
+                question: "What is the gravitational force experienced by an object placed on the surface of the Moon?",
+                options: ["One-sixth its weight on Earth", "Equal to its weight on Earth", "Twice its weight on Earth", "Zero"],
+                correctAnswer: "One-sixth its weight on Earth"
+            },
+            {
+                question: "What is the gravitational force experienced by an object placed at the center of a hollow sphere?",
+                options: ["Zero", "Infinity", "Half its weight", "Equal to its weight"],
+                correctAnswer: "Zero"
+            },
+            
+            {
+                question: "What is the value of acceleration due to gravity at the center of the Earth?",
+                options: ["Zero", "9.8 m/s²", "Half its value at the surface", "Twice its value at the surface"],
+                correctAnswer: "Zero"
+            },
+            {
+                question: "What is the relationship between distance and gravitational force?",
+                options: ["Gravitational force decreases with distance", "Gravitational force increases with distance", "Gravitational force is independent of distance", "Gravitational force is inversely proportional to distance squared"],
+                correctAnswer: "Gravitational force is inversely proportional to distance squared"
+            },
+            {
+                question: "What is the gravitational force experienced by an object placed at a distance equal to the radius of the Earth from its center?",
+                options: ["Half its weight", "Equal to its weight", "One-fourth its weight", "Zero"],
+                correctAnswer: "Half its weight"
+            },
+            {
+                question: "What is the gravitational force experienced by an object placed on the surface of the Earth?",
+                options: ["Equal to its weight", "Half its weight", "Twice its weight", "Zero"],
+                correctAnswer: "Equal to its weight"
+            },
+            {
+                question: "What is the gravitational force between two objects if their masses are doubled and the distance between them is also doubled?",
+                options: ["Same as the original force", "Four times the original force", "Half the original force", "One-fourth the original force"],
+                correctAnswer: "Same as the original force"
+            },
+            {
+                question: "What is the gravitational force between two objects if one of the masses is doubled and the other is halved?",
+                options: ["Twice the original force", "Same as the original force", "Half the original force", "One-fourth the original force"],
+                correctAnswer: "Same as the original force"
+            },
+            {
+                question: "What is the gravitational force experienced by an object placed at a distance equal to twice the radius of the Earth from its center?",
+                options: ["One-fourth its weight", "Half its weight", "One-eighth its weight", "Zero"],
+                correctAnswer: "One-fourth its weight"
+            },
+            {
+                question: "What happens to the gravitational force between two objects when the distance between them is halved?",
+                options: ["It becomes four times", "It becomes half", "It becomes one-fourth", "It remains the same"],
+                correctAnswer: "It becomes four times"
+            },
+            {
+                question: "What is the gravitational force experienced by an object placed on the surface of a planet with twice the mass of Earth and the same radius?",
+                options: ["Twice its weight on Earth", "Same as its weight on Earth", "Half its weight on Earth", "Zero"],
+                correctAnswer: "Twice its weight on Earth"
+            },
+            {
+                question: "What is the gravitational force experienced by an object placed at a distance equal to three times the radius of the Earth from its center?",
+                options: ["One-ninth its weight", "One-third its weight", "One-sixth its weight", "Zero"],
+                correctAnswer: "One-ninth its weight"
+            },
+            {
+                question: "What is the gravitational force experienced by an object placed at a distance equal to four times the radius of the Earth from its center?",
+                options: ["One-sixteenth its weight", "One-fourth its weight", "One-eighth its weight", "Zero"],
+                correctAnswer: "One-sixteenth its weight"
+            },
+            {
+                question: "What is the gravitational force experienced by an object placed at a distance equal to half the radius of the Earth from its center?",
+                options: ["Four times its weight", "Twice its weight", "One-fourth its weight", "Zero"],
+                correctAnswer: "Four times its weight"
+            },
+            {
+                question: "What is the gravitational force experienced by an object placed at a distance equal to the radius of the Earth from its center?",
+                options: ["Half its weight", "Equal to its weight", "One-fourth its weight", "Zero"],
+                correctAnswer: "Half its weight"
+            },
+            {
+                question: "What is the gravitational force experienced by an object placed at a distance equal to twice the radius of the Earth from its center?",
+                options: ["One-fourth its weight", "Half its weight", "One-eighth its weight", "Zero"],
+                correctAnswer: "One-fourth its weight"
+            },
+            {
+                question: "What is the gravitational force experienced by an object placed at a distance equal to four times the radius of the Earth from its center?",
+                options: ["One-sixteenth its weight", "One-fourth its weight", "One-eighth its weight", "Zero"],
+                correctAnswer: "One-sixteenth its weight"
+            },
+            {
+                question: "What is the gravitational force experienced by an object placed at a distance equal to three times the radius of the Earth from its center?",
+                options: ["One-ninth its weight", "One-third its weight", "One-sixth its weight", "Zero"],
+                correctAnswer: "One-ninth its weight"
+            }
+        ];
+        
+
+    
+            
+        
+    
+        // Function to shuffle the options array
+        function shuffleOptions(options) {
+            for (var i = options.length - 1; i > 0; i--) {
+                var j = Math.floor(Math.random() * (i + 1));
+                var temp = options[i];
+                options[i] = options[j];
+                options[j] = temp;
+            }
+            return options;
+        }
+    
+        // Shuffle options for each quiz question
+        quizPool.forEach(function (quiz) {
+            quiz.options = shuffleOptions(quiz.options);
+        });
+    
+        // Generate quiz dynamically
+        function generateQuiz() {
+            totalQuestions = 0;
+            correctAnswers = 0;
+            incorrectAnswers = 0;
+            updateScoreCard();
+    
+            var remainingQuestions = quizPool.slice(); // Copy the original pool of questions
+            var selectedQuestions = [];
+    
+            // Select 10 random questions from the pool
+            for (var i = 0; i < 10; i++) {
+                var randomIndex = Math.floor(Math.random() * remainingQuestions.length);
+                selectedQuestions.push(remainingQuestions[randomIndex]);
+                remainingQuestions.splice(randomIndex, 1); // Remove the selected question from the remaining questions
+            }
+    
+            var quizHTML = "";
+            for (var i = 0; i < selectedQuestions.length; i++) {
+                quizHTML += "<div class='mcq-card'>";
+                quizHTML += "<h3 class='mcq-question'>" + (i + 1) + ". " + selectedQuestions[i].question + "</h3>";
+                quizHTML += "<ul class='mcq-options'>";
+                for (var j = 0; j < selectedQuestions[i].options.length; j++) {
+                    quizHTML += "<li class='mcq-option' onclick='checkAnswer(this, \"" + selectedQuestions[i].correctAnswer + "\")'>" + String.fromCharCode(65 + j) + ". " + selectedQuestions[i].options[j] + "</li>";
+                }
+                quizHTML += "</ul>";
+                quizHTML += "</div>";
+            }
+    
+            document.getElementById("quiz").innerHTML = quizHTML;
+        }
+    
+        // Check user's answer
+        function checkAnswer(option, correctAnswer) {
+            var options = option.parentNode.children;
+            for (var i = 0; i < options.length; i++) {
+                options[i].style.pointerEvents = "none";
+            }
+    
+            if (option.innerText.substr(3) === correctAnswer) {
+                option.style.backgroundColor = "#7FFF7F"; // Correct answer
+                correctAnswers++;
+            } else {
+                option.style.backgroundColor = "#FF7F7F"; // Incorrect answer
+                incorrectAnswers++;
+                for (var i = 0; i < options.length; i++) {
+                    if (options[i].innerText.substr(3) === correctAnswer) {
+                        options[i].style.backgroundColor = "#7FFF7F"; // Highlight correct answer
+                    }
+                }
+            }
+            totalQuestions++;
+            updateScoreCard();
+        }
+    
+        // Update score card
+        function updateScoreCard() {
+            var scoreCardHTML = "<p><span>Total Questions:</span> " + totalQuestions + "</p>";
+            scoreCardHTML += "<p><span>Correct Answers:</span> " + correctAnswers + "</p>";
+            scoreCardHTML += "<p><span>Incorrect Answers:</span> " + incorrectAnswers + "</p>";
+            document.getElementById("score-card").innerHTML = scoreCardHTML;
+        }
+    
+        // Load quiz on page load
+        window.onload = function () {
+            generateQuiz();
+        };
+    
+        // Refresh quiz
+        document.getElementById("refresh-btn").addEventListener("click", function () {
+            generateQuiz();
+        });
+    
+        // Convert video to AR
+        function convertToAR() {
+            // Replace the video with an AR-enabled version using AR.js or any other AR framework
+            var videoContainer = document.querySelector('.video-container');
+            videoContainer.innerHTML = '<div class="ar-video-container"><a-scene embedded arjs="sourceType: video; sourceUrl: CBSE Class 11 __ Physics __ Laws of Motion __ Animation __ in English @digitalguruji3147.mp4; patternRatio: custom; patternRatioCustom: 0.5;"><a-video src="CBSE Class 11 __ Physics __ Laws of Motion __ Animation __ in English @digitalguruji3147.mp4" width="16" height="9" rotation="-90 0 0"></a-video><div class="ar-controls"><button onclick="minimizeVideo()">Minimize</button><button onclick="pauseVideo()">Pause</button><button onclick="playVideo()">Play</button></div></a-scene></div>';
+        }
+    
+        // Minimize video function
+        function minimizeVideo() {
+            var arVideoContainer = document.querySelector('.ar-video-container');
+            var arControls = document.querySelector('.ar-controls');
+            arVideoContainer.style.display = 'none';
+            var minimizeButton = document.createElement('div');
+            minimizeButton.className = 'ar-minimize';
+            minimizeButton.innerHTML = '<button onclick="restoreVideo()">Restore</button>';
+            document.body.appendChild(minimizeButton);
+            arControls.style.display = 'none';
+        }
+    
+        // Restore video function
+        function restoreVideo() {
+            var arVideoContainer = document.querySelector('.ar-video-container');
+            var arControls = document.querySelector('.ar-controls');
+            var minimizeButton = document.querySelector('.ar-minimize');
+            arVideoContainer.style.display = 'block';
+            minimizeButton.parentNode.removeChild(minimizeButton);
+            arControls.style.display = 'block';
+        }
+    
+        // Pause video function
+        function pauseVideo() {
+            var video = document.querySelector('video');
+            video.pause();
+        }
+    
+        // Play video function
+        function playVideo() {
+            var video = document.querySelector('video');
+            video.play();
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEET Aspirants Hub</title>
+    <style>
+        /* Reset styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+/* Header styles */
+header {
+    background-color: #66BB6A; /* Green */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+/* Navigation styles */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #4CAF50; /* Light green */
+}
+
+/* Main content styles */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 18px;
+    color: #666;
+    margin: 0;
+}
+
+/* Video container styles */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (iframe video) */
+    margin-bottom: 20px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Multiple-choice quiz card styles */
+.mcq-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.mcq-question {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.mcq-options {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.mcq-option {
+    font-size: 16px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.mcq-option:hover {
+    background-color: #f0f0f0;
+}
+
+/* Button styles */
+#refresh-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#refresh-btn:hover {
+    background-color: #45a049;
+}
+
+/* Score card styles */
+#score-card {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+#score-card span {
+    font-weight: bold;
+}
+
+/* Hidden element class */
+.hidden {
+    display: none;
+}
+
+/* Fade-in animation */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Slide-in-from-bottom animation */
+.slide-in-bottom {
+    transform: translateY(100%);
+    animation: slideInBottom 0.5s ease forwards;
+}
+
+@keyframes slideInBottom {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Box shadow effect */
+.box-shadow {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover box shadow effect */
+.hover-shadow {
+    transition: box-shadow 0.3s ease;
+}
+
+.hover-shadow:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Image hover scale effect */
+.image-scale {
+    transition: transform 0.3s ease;
+}
+
+.image-scale:hover {
+    transform: scale(1.1);
+}
+
+/* Image hover grayscale effect */
+.image-grayscale {
+    transition: filter 0.3s ease;
+}
+
+.image-grayscale:hover {
+    filter: grayscale(100%);
+}
+
+/* Image hover blur effect */
+.image-blur {
+    transition: filter 0.3s ease;
+}
+
+.image-blur:hover {
+    filter: blur(4px);
+}
+
+/* Image hover brightness effect */
+.image-brightness {
+    transition: filter 0.3s ease;
+}
+
+.image-brightness:hover {
+    filter: brightness(150%);
+}
+
+/* Image hover contrast effect */
+.image-contrast {
+    transition: filter 0.3s ease;
+}
+
+.image-contrast:hover {
+    filter: contrast(200%);
+}
+
+    </style>
+</head>
+<body>
+    <header class="fade-in">
+        <h1>Welcome to NEET Aspirants Hub</h1>
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/chemistry/chemistry.html">Chemistry</a></li>
+                <li><a href="/Physics/physics.html">Physics</a></li>
+                <li><a href="/Biology/biology.html">Biology</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="slide-in-bottom">
+            <h2>AnimalKingdom</h2>
+            <div class="video-container" id="video-container">
+                <!-- Video player will be created dynamically here -->
+                <iframe width="560" height="315" src="https://www.youtube.com/watch?v=YPlmOaKhlNw" frameborder="0" allowfullscreen></iframe>
+            </div>
+            </div>
+            <p>This section covers the fundamental concepts related to the Animal kingdom</p>
+        </section>
+        <section>
+            <h2>Quiz</h2>
+            <div id="quiz">
+                <!-- Quiz questions will be generated dynamically here -->
+            </div>
+            <button id="refresh-btn">Refresh Quiz</button>
+            <div id="score-card"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 NEET Aspirants Hub</p>
+    </footer>
+    <script>
+        // JavaScript code goes here
+        var totalQuestions = 0;
+        var correctAnswers = 0;
+        var incorrectAnswers = 0;
+
+    var quizPool = [
+    {
+        question: "Which of the following is a mammal?",
+        options: ["Crocodile", "Lion", "Frog", "Salmon"],
+        correctAnswer: "Lion"
+    },
+    {
+        question: "What is the largest animal on Earth?",
+        options: ["Elephant", "Blue Whale", "Giraffe", "Hippopotamus"],
+        correctAnswer: "Blue Whale"
+    },
+    {
+        question: "What is the scientific name for the domestic dog?",
+        options: ["Felis catus", "Canis lupus", "Canis familiaris", "Panthera leo"],
+        correctAnswer: "Canis familiaris"
+    },
+    {
+        question: "Which of the following is not a mammal?",
+        options: ["Dolphin", "Shark", "Bat", "Kangaroo"],
+        correctAnswer: "Shark"
+    },
+    {
+        question: "Which of the following animals is a marsupial?",
+        options: ["Kangaroo", "Lion", "Tiger", "Cheetah"],
+        correctAnswer: "Kangaroo"
+    },
+    {
+        question: "What is the largest living primate?",
+        options: ["Gorilla", "Orangutan", "Chimpanzee", "Human"],
+        correctAnswer: "Gorilla"
+    },
+    {
+        question: "What is the only flying mammal?",
+        options: ["Bat", "Bird", "Penguin", "Kangaroo"],
+        correctAnswer: "Bat"
+    },
+    {
+        question: "Which animal has the longest lifespan?",
+        options: ["African Elephant", "Giant Tortoise", "Blue Whale", "Bowhead Whale"],
+        correctAnswer: "Giant Tortoise"
+    },
+    {
+        question: "What is the fastest land animal?",
+        options: ["Cheetah", "Lion", "Gazelle", "Leopard"],
+        correctAnswer: "Cheetah"
+    },
+    {
+        question: "Which of the following is not a big cat?",
+        options: ["Lion", "Tiger", "Leopard", "Cheetah"],
+        correctAnswer: "Cheetah"
+    },
+    {
+        question: "Which bird is known for its ability to mimic human speech?",
+        options: ["Parrot", "Pigeon", "Eagle", "Ostrich"],
+        correctAnswer: "Parrot"
+    },
+    {
+        question: "Which of the following is a marsupial native to Australia?",
+        options: ["Koala", "Panda", "Red Panda", "Sloth"],
+        correctAnswer: "Koala"
+    },
+    {
+        question: "What is the largest living species of lizard?",
+        options: ["Komodo Dragon", "Monitor Lizard", "Gila Monster", "Gecko"],
+        correctAnswer: "Komodo Dragon"
+    },
+    {
+        question: "Which animal is known as the 'King of the Jungle'?",
+        options: ["Tiger", "Lion", "Leopard", "Panther"],
+        correctAnswer: "Lion"
+    },
+    {
+        question: "Which animal is characterized by its black and white stripes?",
+        options: ["Zebra", "Horse", "Giraffe", "Donkey"],
+        correctAnswer: "Zebra"
+    },
+    {
+        question: "What is the only marsupial native to North America?",
+        options: ["Kangaroo", "Opossum", "Wombat", "Tasmanian Devil"],
+        correctAnswer: "Opossum"
+    },
+    {
+        question: "Which animal is known for its ability to change color to match its surroundings?",
+        options: ["Chameleon", "Gecko", "Iguana", "Salamander"],
+        correctAnswer: "Chameleon"
+    },
+    {
+        question: "Which of the following is not a type of bear?",
+        options: ["Polar Bear", "Grizzly Bear", "Koala Bear", "Black Bear"],
+        correctAnswer: "Koala Bear"
+    },
+    {
+        question: "What is the largest species of bear?",
+        options: ["Polar Bear", "Grizzly Bear", "Kodiak Bear", "Sloth Bear"],
+        correctAnswer: "Kodiak Bear"
+    },
+    {
+        question: "Which of the following is not a marine mammal?",
+        options: ["Dolphin", "Whale", "Seal", "Walrus"],
+        correctAnswer: "Seal"
+    },
+    {
+        question: "Which of the following is a mammal?",
+        options: ["Crocodile", "Lion", "Frog", "Salmon"],
+        correctAnswer: "Lion"
+    },
+    {
+        question: "Which class do insects belong to?",
+        options: ["Mammalia", "Amphibia", "Insecta", "Reptilia"],
+        correctAnswer: "Insecta"
+    },
+    {
+        question: "Which of the following animals does not belong to the order Carnivora?",
+        options: ["Lion", "Tiger", "Wolf", "Bear"],
+        correctAnswer: "Bear"
+    },
+    {
+        question: "What is the fastest marine animal?",
+        options: ["Sailfish", "Dolphin", "Blue Whale", "Squid"],
+        correctAnswer: "Sailfish"
+    },
+    {
+        question: "Which of the following animals has the longest lifespan?",
+        options: ["Giant Tortoise", "Bowhead Whale", "Elephant", "Human"],
+        correctAnswer: "Bowhead Whale"
+    },
+    {
+        question: "Which of the following animals is not a rodent?",
+        options: ["Rat", "Squirrel", "Hamster", "Rabbit"],
+        correctAnswer: "Rabbit"
+    },
+    {
+        question: "Which of the following birds is known for its ability to mimic human speech?",
+        options: ["Parrot", "Penguin", "Ostrich", "Eagle"],
+        correctAnswer: "Parrot"
+    },
+    {
+        question: "What is the world's largest living primate?",
+        options: ["Gorilla", "Orangutan", "Chimpanzee", "Gibbon"],
+        correctAnswer: "Gorilla"
+    },
+    {
+        question: "Which animal has the highest body temperature regulation among mammals?",
+        options: ["Arctic Fox", "Polar Bear", "Elephant Seal", "Blue Whale"],
+        correctAnswer: "Arctic Fox"
+    },
+    {
+        question: "Which of the following is the smallest mammal?",
+        options: ["Shrew", "Mouse Lemur", "Etruscan Shrew", "Bumblebee Bat"],
+        correctAnswer: "Etruscan Shrew"
+    },
+    {
+        question: "Which animal is known as the 'king of the jungle'?",
+        options: ["Lion", "Tiger", "Leopard", "Jaguar"],
+        correctAnswer: "Lion"
+    },
+    {
+        question: "Which of the following is a marsupial?",
+        options: ["Kangaroo", "Rabbit", "Squirrel", "Mouse"],
+        correctAnswer: "Kangaroo"
+    },
+    {
+        question: "Which of the following is not a characteristic of mammals?",
+        options: ["Laying eggs", "Having mammary glands", "Being warm-blooded", "Having hair or fur"],
+        correctAnswer: "Laying eggs"
+    },
+    {
+        question: "What is the largest living reptile?",
+        options: ["Saltwater Crocodile", "Komodo Dragon", "Green Anaconda", "Nile Crocodile"],
+        correctAnswer: "Saltwater Crocodile"
+    },
+    {
+        question: "Which bird is known as the symbol of peace?",
+        options: ["Eagle", "Owl", "Dove", "Hawk"],
+        correctAnswer: "Dove"
+    },
+    {
+        question: "Which of the following animals is known for its exceptional memory?",
+        options: ["Dolphin", "Elephant", "Octopus", "Chimpanzee"],
+        correctAnswer: "Elephant"
+    },
+    {
+        question: "What is the smallest mammal on Earth?",
+        options: ["Pygmy Marmoset", "Bumblebee Bat", "Kitti's Hog-nosed Bat", "Etruscan Shrew"],
+        correctAnswer: "Bumblebee Bat"
+    },
+    {
+        question: "Which of the following animals can change its color to match its surroundings?",
+        options: ["Chameleon", "Iguana", "Gecko", "Anole"],
+        correctAnswer: "Chameleon"
+    },
+    {
+        question: "Which of the following is not a big cat?",
+        options: ["Leopard", "Cheetah", "Lynx", "Jaguar"],
+        correctAnswer: "Lynx"
+    },
+    {
+        question: "What is the fastest land animal?",
+        options: ["Lion", "Cheetah", "Pronghorn Antelope", "Greyhound"],
+        correctAnswer: "Cheetah"
+    },
+    {
+        question: "Which of the following animals belongs to the order Lagomorpha?",
+        options: ["Rabbit", "Squirrel", "Mouse", "Mole"],
+        correctAnswer: "Rabbit"
+    },
+    {
+        question: "What is the largest living amphibian?",
+        options: ["Giant Salamander", "Axolotl", "Bullfrog", "Caecilian"],
+        correctAnswer: "Giant Salamander"
+    },
+    {
+        question: "Which of the following animals is a monotreme?",
+        options: ["Platypus", "Kangaroo", "Koala", "Dingo"],
+        correctAnswer: "Platypus"
+    },
+    {
+        question: "Which of the following is not a type of echinoderm?",
+        options: ["Starfish", "Sea Urchin", "Sea Cucumber", "Jellyfish"],
+        correctAnswer: "Jellyfish"
+    },
+    {
+        question: "What is the scientific name of the Komodo Dragon?",
+        options: ["Varanus komodoensis", "Crocodilus porosus", "Python bivittatus", "Dendrobates auratus"],
+        correctAnswer: "Varanus komodoensis"
+    },
+    {
+        question: "Which of the following animals is not a marsupial?",
+        options: ["Kangaroo", "Koala", "Opossum", "Wallaby"],
+        correctAnswer: "Koala"
+    },
+    {
+        question: "What is the largest species of bat in the world?",
+        options: ["Giant Golden-Crowned Flying Fox", "Spectacled Flying Fox", "Indian Flying Fox", "Little Brown Bat"],
+        correctAnswer: "Giant Golden-Crowned Flying Fox"
+    },
+    {
+        question: "Which animal has the longest migration route?",
+        options: ["Monarch Butterfly", "Arctic Tern", "Humpback Whale", "Caribou"],
+        correctAnswer: "Arctic Tern"
+    },
+    {
+        question: "What is the smallest species of monkey?",
+        options: ["Pygmy Marmoset", "Tarsier", "Squirrel Monkey", "Dwarf Lantern Shark"],
+        correctAnswer: "Pygmy Marmoset"
+    },
+    {
+        question: "Which of the following is not a type of cephalopod?",
+        options: ["Squid", "Octopus", "Cuttlefish", "Nautilus"],
+        correctAnswer: "Nautilus"
+    }
+];
+
+
+        // Function to shuffle the options array
+        function shuffleOptions(options) {
+            for (var i = options.length - 1; i > 0; i--) {
+                var j = Math.floor(Math.random() * (i + 1));
+                var temp = options[i];
+                options[i] = options[j];
+                options[j] = temp;
+            }
+            return options;
+        }
+
+        // Shuffle correct answer options
+        quizPool.forEach(function (quiz) {
+            quiz.options = shuffleOptions(quiz.options);
+        });
+
+        function generateQuiz() {
+            totalQuestions = 0;
+            correctAnswers = 0;
+            incorrectAnswers = 0;
+            updateScoreCard();
+
+            var remainingQuestions = quizPool.slice(); // Copy the original pool of questions
+            var selectedQuestions = [];
+
+            // Select 10 random questions from the pool
+            for (var i = 0; i < 10; i++) {
+                var randomIndex = Math.floor(Math.random() * remainingQuestions.length);
+                selectedQuestions.push(remainingQuestions[randomIndex]);
+                remainingQuestions.splice(randomIndex, 1); // Remove the selected question from the remaining questions
+            }
+
+            var quizHTML = "";
+            for (var i = 0; i < selectedQuestions.length; i++) {
+                quizHTML += "<div class='mcq-card'>";
+                quizHTML += "<h3 class='mcq-question'>" + (i + 1) + ". " + selectedQuestions[i].question + "</h3>";
+                quizHTML += "<ul class='mcq-options'>";
+                for (var j = 0; j < selectedQuestions[i].options.length; j++) {
+                    quizHTML += "<li class='mcq-option' onclick='checkAnswer(this, \"" + selectedQuestions[i].correctAnswer + "\")'>" + String.fromCharCode(65 + j) + ". " + selectedQuestions[i].options[j] + "</li>";
+                }
+                quizHTML += "</ul>";
+                quizHTML += "</div>";
+            }
+
+            document.getElementById("quiz").innerHTML = quizHTML;
+        }
+
+        function checkAnswer(option, correctAnswer) {
+            var options = option.parentNode.children;
+            for (var i = 0; i < options.length; i++) {
+                options[i].style.pointerEvents = "none";
+            }
+
+            if (option.innerText.substr(3) === correctAnswer) {
+                option.style.backgroundColor = "#7FFF7F"; // Correct answer
+                correctAnswers++;
+            } else {
+                option.style.backgroundColor = "#FF7F7F"; // Incorrect answer
+                incorrectAnswers++;
+                for (var i = 0; i < options.length; i++) {
+                    if (options[i].innerText.substr(3) === correctAnswer) {
+                        options[i].style.backgroundColor = "#7FFF7F"; // Highlight correct answer
+                    }
+                }
+            }
+            totalQuestions++;
+            updateScoreCard();
+        }
+
+        function updateScoreCard() {
+            var scoreCardHTML = "<p><span>Total Questions:</span> " + totalQuestions + "</p>";
+            scoreCardHTML += "<p><span>Correct Answers:</span> " + correctAnswers + "</p>";
+            scoreCardHTML += "<p><span>Incorrect Answers:</span> " + incorrectAnswers + "</p>";
+            document.getElementById("score-card").innerHTML = scoreCardHTML;
+        }
+
+        window.onload = function () {
+            generateQuiz();
+            setInterval(function() {
+                generateQuiz();
+            }, 20000);
+        };
+
+        document.getElementById("refresh-btn").addEventListener("click", function () {
+            generateQuiz();
+        });
+
+        function createVideoPlayer() {
+            var videoContainer = document.getElementById("video-container");
+            var videoElement = document.createElement("video");
+            videoElement.setAttribute("controls", true);
+
+            var sourceElement = document.createElement("source");
+            sourceElement.setAttribute("src", "https://www.youtube.com/watch?v=YPlmOaKhlNw");
+            sourceElement.setAttribute("type", "video/mp4");
+
+            // Check if the browser supports the video tag
+            if (videoElement.canPlayType) {
+                videoElement.appendChild(sourceElement);
+                videoContainer.appendChild(videoElement);
+            } else {
+                videoContainer.innerHTML = "Your browser does not support the video tag.";
+            }
+        }
+
+        // Call the function to create the video player
+        createVideoPlayer();
+    </script>
+</body>
+</html>

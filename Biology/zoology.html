@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEET Aspirants Hub - Zoology</title>
+    <style>
+        body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f8f8;
+}
+
+header {
+    background-color: #66BB6A; /* Green */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #4CAF50; /* Light green */
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 18px;
+    color: #666;
+    margin: 0;
+}
+
+.topic-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.topic-card {
+    background-color: #FFD54F; /* Amber */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.topic-card:hover {
+    transform: translateY(-5px);
+}
+
+.mcq-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.mcq-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.mcq-card:hover {
+    transform: translateY(-5px);
+}
+
+.mcq-question {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.mcq-options {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.mcq-option {
+    font-size: 16px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.mcq-option:hover {
+    background-color: #f0f0f0;
+}
+.topic-container .topic-card a {
+    text-decoration: none;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to NEET Aspirants Hub</h1>
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/chemistry/chemistry.html">Chemistry</a></li>
+                <li><a href="/Biology/biology.html">Biology</a></li>
+                <li><a href="/Physics/physics.html">Physics</a></li> </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Zoology Topics for NEET</h2>
+            <div class="topic-container">
+                <div class="topic-card"><a href="Animalkingdom.html">AnimalKingdom</a></div>
+                <div class="topic-card"><a href="Structural Organization in animal.html">Structural Organization in Animals</a></div>
+                <div class="topic-card"><a href="Digestive System.html">Digestive System</a></div>
+                <div class="topic-card"><a href="Respiratory System.html">Respiratory System</a></div>
+                <div class="topic-card"><a href="Circulatory System.html">Circulatory System</a></div>
+                <div class="topic-card"><a href="Excretory System.html">Excretory System</a></div>
+                <div class="topic-card"><a href="Nervous System.html">Nervous System</a></div>
+                <div class="topic-card"><a href="Endocrine System.html">Endocrine System</a></div>
+                <div class="topic-card"><a href="Reproductive System.html">Reproductive System</a></div>
+                <div class="topic-card"><a href="Genetics.html">Genetics</a></div>
+                <div class="topic-card"><a href="Evolution.html">Evolution</a></div>
+                <div class="topic-card"><a href="Human Health and Disease.html">Human Health and Disease</a></div>
+                <div class="topic-card"><a href="Biotechnology and its Applications.html">Biotechnology and its Applications</a></div>
+            </div>
+        </section>
+        <section>
+            <h2>Zoology Quiz: Animal Kingdom</h2>
+            <div class="mcq-container">
+                <div class="mcq-card" id="mcq1">
+                    <h3 class="mcq-question">Which of the following is NOT a characteristic of Chordata?</h3>
+                    <ul class="mcq-options">
+                        <li class="mcq-option" onclick="checkAnswer('mcq1', 'A')">A. Notochord</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq1', 'B')">B. Bilateral symmetry</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq1', 'C')">C. Closed circulatory system</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq1', 'D')">D. Segmented body</li> 
+                    </ul>
+                </div>
+                <div class="mcq-card" id="mcq2">
+                    <h3 class="mcq-question">Insects belong to which phylum?</h3>
+                    <ul class="mcq-options">
+                        <li class="mcq-option" onclick="checkAnswer('mcq2', 'A')">A. Chordata</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq2', 'B')">B. Annelida</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq2', 'C')">C. Arthropoda</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq2', 'D')">D. Echinodermata</li>
+                    </ul>
+                </div>               
+                <div class="mcq-card" id="mcq3">
+                    <h3 class="mcq-question">Which of the following is a defining characteristic of mammals?</h3>
+                    <ul class="mcq-options">
+                        <li class="mcq-option" onclick="checkAnswer('mcq3', 'A')">A. Cold-blooded</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq3', 'B')">B. Lay eggs</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq3', 'C')">C. Mammary glands</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq3', 'D')">D. Gills</li> 
+                    </ul>
+                </div>
+                <div class="mcq-card" id="mcq4">
+                    <h3 class="mcq-question">What is the main function of a bird's feathers?</h3>
+                    <ul class="mcq-options">
+                        <li class="mcq-option" onclick="checkAnswer('mcq4', 'A')">A. Camouflage</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq4', 'B')">B. Protection from predators</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq4', 'C')">C. Regulation of body temperature</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq4', 'D')">D. Aid in swimming</li>
+                    </ul>
+                </div>
+                <div class="mcq-card" id="mcq5">
+                    <h3 class="mcq-question">What is the largest mammal on Earth?</h3>
+                    <ul class="mcq-options">
+                        <li class="mcq-option" onclick="checkAnswer('mcq5', 'A')">A. Elephant</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq5', 'B')">B. Blue whale</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq5', 'C')">C. Giraffe</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq5', 'D')">D. Hippopotamus</li>
+                    </ul>
+                </div>
+                <div class="mcq-card" id="mcq6">
+                    <h3 class="mcq-question">Which of the following is a characteristic of amphibians?</h3>
+                    <ul class="mcq-options">
+                        <li class="mcq-option" onclick="checkAnswer('mcq6', 'A')">A. Lay eggs on land</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq6', 'B')">B. Dry, scaly skin</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq6', 'C')">C. Three-chambered heart</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq6', 'D')">D. Cold-blooded</li>
+                    </ul>
+                </div>
+                <div class="mcq-card" id="mcq7">
+                    <h3 class="mcq-question">What is the study of insects called?</h3>
+                    <ul class="mcq-options">
+                        <li class="mcq-option" onclick="checkAnswer('mcq7', 'A')">A. Entomology</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq7', 'B')">B. Ornithology</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq7', 'C')">C. Herpetology</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq7', 'D')">D. Ichthyology</li>
+                    </ul>
+                </div>
+                <div class="mcq-card" id="mcq8">
+                    <h3 class="mcq-question">What is the process called by which insects transform from larva to adult?</h3>
+                    <ul class="mcq-options">
+                        <li class="mcq-option" onclick="checkAnswer('mcq8', 'A')">A. Metamorphosis</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq8', 'B')">B. Evolution</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq8', 'C')">C. Molt</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq8', 'D')">D. Fertilization</li>
+                    </ul>
+                </div>
+                <div class="mcq-card" id="mcq9">
+                    <h3 class="mcq-question">Which of the following is NOT a type of fish?</h3>
+                    <ul class="mcq-options">
+                        <li class="mcq-option" onclick="checkAnswer('mcq9', 'A')">A. Shark</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq9', 'B')">B. Seahorse</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq9', 'C')">C. Jellyfish</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq9', 'D')">D. Trout</li>
+                    </ul>
+                </div>
+                <div class="mcq-card" id="mcq10">
+                    <h3 class="mcq-question">What is the scientific name for the study of animal behavior?</h3>
+                    <ul class="mcq-options">
+                        <li class="mcq-option" onclick="checkAnswer('mcq10', 'A')">A. Ethology</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq10', 'B')">B. Ecology</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq10', 'C')">C. Physiology</li>
+                        <li class="mcq-option" onclick="checkAnswer('mcq10', 'D')">D. Taxonomy</li>
+                    </ul>
+                </div>
+            </div>
+            <button onclick="checkAnswers()">Submit Quiz</button>
+        </section>
+        </main>
+    <footer>
+        <p>&copy; 2024 NEET Aspirants Hub</p>
+    </footer>    
+        <script>
+            function checkAnswer(questionId, answer) {
+                
+                alert("Answer submitted for question " + questionId + ". You chose: " + answer);
+            }
+    
+            function checkAnswers() {
+                
+                alert("Quiz submitted! Please check the console for your results.");
+                console.log("Check your browser's console for answer checks.");
+            }
+        </script>
+</body>
+</html>
